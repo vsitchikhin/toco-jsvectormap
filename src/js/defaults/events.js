@@ -7,5 +7,9 @@ export default {
   onRegionTooltipShow: 'region.tooltip:show',
   onMarkerTooltipShow: 'marker.tooltip:show',
   onLoaded: 'map:loaded',
-  onDestroyed: 'map:destroyed'
+  onDestroyed: 'map:destroyed',
+  onRegionOver: 'map:onRegionOver',
+  onMarkerOver: 'map:onMarkerOver',
+  onRegionOut: 'map:onRegionOut',
+  onMarkerOut: 'map:onMarkerOut'
 }
