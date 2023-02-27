@@ -45,17 +45,7 @@ export default function setupElementEvents() {
     const data = parseEvent(map, this, true)
     const showTooltip = map.params.showTooltip
 
-
     if (event.type === 'mouseover') {
-      map._emit(
-        data.type === 'region' ? Events.onRegionOver : Events.onMarkerOver,
-        [event, data.code],
-      )
-
-      if (event.defaultPrevented) {
-        return;
-      }
-
       data.element.hover(true)
       map.tooltip.text(data.tooltipText)
       map._emit(data.event, [event, map.tooltip, data.code])
@@ -66,15 +56,6 @@ export default function setupElementEvents() {
         }
       }
     } else {
-      map._emit(
-        data.type === 'region' ? Events.onRegionOut : Events.onMarkerOut,
-        [event, data.code],
-      )
-
-      if (event.defaultPrevented) {
-        return;
-      }
-
       data.element.hover(false)
 
       if (showTooltip) {
@@ -96,16 +77,6 @@ export default function setupElementEvents() {
     ) {
       const element = data.element
 
-      map._emit(data.event, [
-        data.code,
-        element.isSelected,
-        map._getSelected(`${data.type}s`)
-      ])
-
-      if (event.defaultPrevented) {
-        return;
-      }
-
       // We're checking if regions/markers|SelectableOne option is presented
       if (map.params[`${data.type}sSelectableOne`]) {
         map._clearSelected(`${data.type}s`)
@@ -116,14 +87,17 @@ export default function setupElementEvents() {
       } else {
         element.select(true)
       }
+
+      map._emit(data.event, [
+        data.code,
+        element.isSelected,
+        map._getSelected(`${data.type}s`)
+      ])
     }
   })
 
   // When region/marker is clicked
   EventHandler.delegate(container, 'click', '.jvm-element', function (event) {
-    if (event.defaultPrevented) {
-      return;
-    }
     const { type, code } = parseEvent(map, this)
 
     map._emit(
