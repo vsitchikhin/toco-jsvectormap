@@ -1,5 +1,5 @@
 {
-  "name": "toco-jsvectormap",
+  "name": "jsvectormap",
   "version": "1.5.1",
   "description": "A lightweight Javascript library for creating interactive maps",
   "main": "dist/js/jsvectormap.min.js",
