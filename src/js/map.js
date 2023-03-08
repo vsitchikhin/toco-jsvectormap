@@ -167,7 +167,7 @@ class Map {
     let key, selected = []
 
     for (key in this[type]) {
-      if (this[type][key].element.isSelected) {
+      if (this[type][key]?.element.isSelected) {
         selected.push(key)
       }
     }
@@ -178,14 +178,14 @@ class Map {
   _setSelected(type, keys) {
     keys.forEach(key => {
       if (this[type][key]) {
-        this[type][key].element.select(true)
+        this[type][key]?.element.select(true)
       }
     })
   }
 
   _clearSelected(type) {
     this._getSelected(type).forEach(i => {
-      this[type][i].element.select(false)
+      this[type][i]?.element.select(false)
     })
   }
 
@@ -222,7 +222,7 @@ class Map {
 
     markers.forEach(index => {
       // Remove the element from the DOM
-      this.markers[index].element.remove()
+      this.markers[index]?.element.remove()
       // Remove the element from markers object
       delete this.markers[index]
     })
@@ -267,7 +267,7 @@ class Map {
     const uid = getLineUid(from, to)
 
     if (this.lines.hasOwnProperty(uid)) {
-      this.lines[uid].element.remove()
+      this.lines[uid]?.element.remove()
       delete this.lines[uid]
     }
   }

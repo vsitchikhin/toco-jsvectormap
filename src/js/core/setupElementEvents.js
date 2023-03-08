@@ -52,7 +52,7 @@ export default function setupElementEvents() {
         return
       }
 
-      data.element.hover(true)
+      data?.element.hover(true)
       map.tooltip.text(data.tooltipText)
 
 
@@ -68,7 +68,7 @@ export default function setupElementEvents() {
         return
       }
 
-      data.element.hover(false)
+      data?.element.hover(false)
 
       if (showTooltip) {
         map.tooltip.hide()
@@ -87,7 +87,7 @@ export default function setupElementEvents() {
     if (
       (data.type === 'region' && map.params.regionsSelectable) || (data.type === 'marker' && map.params.markersSelectable)
     ) {
-      const element = data.element
+      const element = data?.element
 
       map._emit(data.event, [
         data.code,
@@ -104,7 +104,7 @@ export default function setupElementEvents() {
         map._clearSelected(`${data.type}s`)
       }
 
-      if (data.element.isSelected) {
+      if (data?.element.isSelected) {
         element.select(false)
       } else {
         element.select(true)

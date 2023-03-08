@@ -10,7 +10,7 @@ export default function setFocus(config = {}) {
   if (codes.length) {
     codes.forEach((code) => {
       if (this.regions[code]) {
-        let itemBbox = this.regions[code].element.shape.getBBox()
+        let itemBbox = this.regions[code]?.element.shape.getBBox()
 
         if (itemBbox) {
           // Handle the first loop

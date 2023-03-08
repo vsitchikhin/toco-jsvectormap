@@ -45,7 +45,7 @@ class DataVisualization {
   setAttributes(attrs) {
     for (let code in attrs) {
       if (this._map.regions[code]) {
-        this._map.regions[code].element.setStyle('fill', attrs[code])
+        this._map.regions[code]?.element.setStyle('fill', attrs[code])
       }
     }
   }
