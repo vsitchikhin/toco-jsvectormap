@@ -178,14 +178,14 @@ class Map {
   _setSelected(type, keys) {
     keys.forEach(key => {
       if (this[type][key]) {
-        this[type][key]?.element.select(true)
+        this[type][key]?.element?.select(true)
       }
     })
   }
 
   _clearSelected(type) {
     this._getSelected(type).forEach(i => {
-      this[type][i]?.element.select(false)
+      this[type][i]?.element?.select(false)
     })
   }
 

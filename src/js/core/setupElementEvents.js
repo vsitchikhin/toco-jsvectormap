@@ -105,9 +105,9 @@ export default function setupElementEvents() {
       }
 
       if (data?.element?.isSelected) {
-        element.select(false)
+        element?.select(false)
       } else {
-        element.select(true)
+        element?.select(true)
       }
     }
   })
