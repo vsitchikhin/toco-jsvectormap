@@ -52,7 +52,7 @@ export default function setupElementEvents() {
         return
       }
 
-      data?.element.hover(true)
+      data?.element?.hover(true)
       map.tooltip.text(data.tooltipText)
 
 
@@ -68,7 +68,7 @@ export default function setupElementEvents() {
         return
       }
 
-      data?.element.hover(false)
+      data?.element?.hover(false)
 
       if (showTooltip) {
         map.tooltip.hide()
