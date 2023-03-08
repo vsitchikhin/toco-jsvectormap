@@ -91,7 +91,7 @@ export default function setupElementEvents() {
 
       map._emit(data.event, [
         data.code,
-        element.isSelected,
+        element?.isSelected,
         map._getSelected(`${data.type}s`)
       ])
 
@@ -104,7 +104,7 @@ export default function setupElementEvents() {
         map._clearSelected(`${data.type}s`)
       }
 
-      if (data?.element.isSelected) {
+      if (data?.element?.isSelected) {
         element.select(false)
       } else {
         element.select(true)

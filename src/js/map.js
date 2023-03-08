@@ -167,7 +167,7 @@ class Map {
     let key, selected = []
 
     for (key in this[type]) {
-      if (this[type][key]?.element.isSelected) {
+      if (this[type][key]?.element?.isSelected) {
         selected.push(key)
       }
     }
