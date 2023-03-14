@@ -51,7 +51,7 @@ class Series {
   setAttributes(attrs) {
     for (let code in attrs) {
       if (this._elements[code]) {
-        this._elements[code].element.setStyle(this.config.attribute, attrs[code])
+        this._elements[code]?.element.setStyle(this.config.attribute, attrs[code])
       }
     }
   }
@@ -61,7 +61,7 @@ class Series {
 
     for (key in this._values) {
       if (this._elements[key]) {
-        attrs[key] = this._elements[key].element.shape.style.initial[this.config.attribute]
+        attrs[key] = this._elements[key]?.element.shape.style.initial[this.config.attribute]
       }
     }
 

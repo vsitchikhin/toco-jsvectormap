@@ -41,7 +41,7 @@ const EventHandler = {
   },
   flush() {
     Object.keys(eventRegistry).forEach(event => {
-      EventHandler.off(eventRegistry[event].selector, event, eventRegistry[event].handler)
+      EventHandler.off(eventRegistry[event]?.selector, event, eventRegistry[event].handler)
     })
   },
   getEventRegistry() {
