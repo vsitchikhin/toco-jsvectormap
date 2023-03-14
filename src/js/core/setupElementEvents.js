@@ -20,7 +20,7 @@ function parseEvent(map, selector, isTooltip) {
     event,
     type,
     code,
-    element: type === 'region' ? map.regions[code].element : map.markers[code].element,
+    element: type === 'region' ? map.regions[code]?.element : map.markers[code].element,
     tooltipText
   }
 }
