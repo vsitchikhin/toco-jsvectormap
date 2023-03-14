@@ -6,11 +6,11 @@ export default function repositionLines() {
       const marker = this.markers[mindex]
       // console.log(this.lines[index], index);
 
-      if (marker.config.name === this.lines[index].config.from) {
+      if (marker.config?.name === this.lines[index].config.from) {
         point1 = this.getMarkerPosition(marker.config)
       }
 
-      if (marker.config.name === this.lines[index].config.to) {
+      if (marker.config?.name === this.lines[index].config.to) {
         point2 = this.getMarkerPosition(marker.config)
       }
     }
