@@ -9,6 +9,8 @@ function parseEvent(map, selector, isTooltip) {
     code = type === 'region' ? element.getAttribute('data-code') : element.getAttribute('data-index'),
     event = `${type}:selected`
 
+  let tooltipText = ''
+  tooltipText = type === 'region' ? map.mapData.paths[code]?.name || '' : (map.markers[code].config?.name || '')
   // Init tooltip event
   if (isTooltip) {
     event = `${type}.tooltip:show`
@@ -19,7 +21,7 @@ function parseEvent(map, selector, isTooltip) {
     type,
     code,
     element: type === 'region' ? map.regions[code].element : map.markers[code].element,
-    tooltipText: type === 'region' ? map.mapData.paths[code].name || '' : (map.markers[code].config.name || '')
+    tooltipText
   }
 }
 

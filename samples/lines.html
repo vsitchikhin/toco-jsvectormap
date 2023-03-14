@@ -48,7 +48,7 @@
       labels: {
         markers: {
           render: function(marker) {
-            return marker.name
+            return marker?.name
           },
           offsets: function (index) {
             return markers[index].offsets || [0, 0]
